@@ -20,6 +20,7 @@ format:
 # Grupo de Estudos em R e Estatística (GERE)
 
 ## Grupo de Estudos em R e Estatística (GERE)
+asdfasdf
 
 ## Liga Acadêmica
 
