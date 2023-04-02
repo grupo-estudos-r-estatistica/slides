@@ -76,11 +76,8 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 ::: {.column width="40%"}
 <center>
 <br>
-![](img/fabiana.png)
-[`r icons::icon_style(icons::fontawesome("link"), fill = "#2268bc")`](https://mauriciovancine.github.io/)
-[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:mauricio.vancine@gmail.com)
-[`r icons::icon_style(icons::academicons("cv"), fill = "#2268bc")`](https://mauriciovancine.github.io/cv/cv-mauricio-vancine-pt-academic-complete.html)
-[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#2268bc")`](https://twitter.com/mauriciovancine)
+!["C:\Users\vicas\OneDrive\Documentos\GERE\slides\00_apresentacao\img\fabiana.png"](img/fabiana.png)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:fabiana.santos-oliveira@unesp.br)
 [`r icons::icon_style(icons::fontawesome("github"), fill = "#2268bc")`](https://github.com/mauriciovancine)
 [`r icons::icon_style(icons::academicons("orcid"), fill = "#2268bc")`](https://orcid.org/0000-0001-9650-7575)
 [`r icons::icon_style(icons::academicons("lattes"), fill = "#2268bc")`](http://lattes.cnpq.br/9761288418931193)
@@ -92,6 +89,10 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 - Comitê do GERE
 
 - Graduanda em Ecologia
+
+- Estagiária no Laboratório de Primatologia (LaP)
+
+- Birdwatcher
 
 :::
 :::
@@ -128,7 +129,7 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 ::: {.column width="40%"}
 <center>
 <br>
-![](img/victor.png)
+!["C:\Users\vicas\OneDrive\Documentos\GERE\slides\00_apresentacao\img\victor s.png"](img/victor.png)
 [`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:vicasagrand@outlook.com)
 [`r icons::icon_style(icons::fontawesome("github"), fill = "#2268bc")`](https://github.com/vcasagra)
 [`r icons::icon_style(icons::academicons("orcid"), fill = "#2268bc")`](https://orcid.org/0009-0008-3130-4628)
