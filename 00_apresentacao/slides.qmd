@@ -21,15 +21,25 @@ format:
 
 ## Grupo de Estudos em R e Estatística (GERE)
 
-1.Objetivos
-Através da difusão e capacitação no uso da linguagem R e sua aplicação em abordagem quantitativas e estatísticas, em conformidade com o Art. 2o da Portaria UNESP 69/2022, o GERE busca aprimorar a formação técnico-científica e humanística dos graduandos e pós-graduandos, bem como fomentar um espaço de convivência e aprendizado entre os membros da comunidade unespiana.
+**Objetivos**
+
+- Difusão e capacitação no uso da linguagem R e sua aplicação em abordagem quantitativas e estatísticas
+
+- Conformidade com o Art. 2º da Portaria UNESP 69/2022 (Ligas acadêmicas)
+
+- Aprimorar a formação técnico-científica e humanística dos graduandos e pós-graduandos 
+
+- Fomentar um espaço de convivência e aprendizado entre os membros da comunidade unespiana
 
 ## Grupo de Estudos em R e Estatística (GERE)
 
-2. Funcionamento: Estatuto e Plano Acadêmico
-- 8 horas/mês com presença mínima de 75% (sujeito à sanções,exceto em casos de falta justificada e aprovada pelo comitê);
-- Comitê gestor democraticamente eleito por Assembleia Geral e sujeito à avaliações periódicas.
-- É um dever dos associados a conduta ética e pró-ativa, que preserve a respeitabilidade da liga e promova seus objetivos.
+**Funcionamento: Estatuto e Plano Acadêmico**
+
+- 8 horas/mês com presença mínima de 75% (sujeito à sanções, exceto em casos de falta justificada e aprovada pelo comitê)
+
+- Comitê gestor democraticamente eleito por Assembleia Geral e sujeito à avaliações periódicas
+
+- É um dever dos associados a conduta ética e pró-ativa, que preserve a respeitabilidade da liga e promova seus objetivos
 
 # Comunicação
 
@@ -118,7 +128,7 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 ::: {.column width="40%"}
 <center>
 <br>
-!["C:\Users\vicas\Downloads\foto perfil.jpeg"](img/victor.png)
+![](img/victor.png)
 [`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:vicasagrand@outlook.com)
 [`r icons::icon_style(icons::fontawesome("github"), fill = "#2268bc")`](https://github.com/vcasagra)
 [`r icons::icon_style(icons::academicons("orcid"), fill = "#2268bc")`](https://orcid.org/0009-0008-3130-4628)
