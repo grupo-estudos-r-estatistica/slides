@@ -83,6 +83,8 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 
 ::: {.column width="60%"}
 
+<br>
+
 - Comitê do GERE
 
 - Graduanda em Ecologia
@@ -107,6 +109,8 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 
 ::: {.column width="60%"}
 
+<br>
+
 - Comitê do GERE
 
 - Mestrando em Ecologia
@@ -122,7 +126,7 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 ::: {.column width="40%"}
 <center>
 <br>
-![](img/victor s.png)
+![](img/victor.png)
 [`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#bc0170")`](mailto:vicasagrand@outlook.com)
 [`r icons::icon_style(icons::fontawesome("github"), fill = "#bc0170")`](https://github.com/vcasagra)
 [`r icons::icon_style(icons::academicons("orcid"), fill = "#bc0170")`](https://orcid.org/0009-0008-3130-4628)
@@ -131,6 +135,8 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 :::
 
 ::: {.column width="60%"}
+
+<br>
 
 - Coordenador do GERE
 
