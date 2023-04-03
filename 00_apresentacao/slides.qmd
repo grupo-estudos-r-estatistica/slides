@@ -76,11 +76,8 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 ::: {.column width="40%"}
 <center>
 <br>
-!["C:\Users\vicas\OneDrive\Documentos\GERE\slides\00_apresentacao\img\fabiana.png"](img/fabiana.png)
-[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:fabiana.santos-oliveira@unesp.br)
-[`r icons::icon_style(icons::fontawesome("github"), fill = "#2268bc")`](https://github.com/mauriciovancine)
-[`r icons::icon_style(icons::academicons("orcid"), fill = "#2268bc")`](https://orcid.org/0000-0001-9650-7575)
-[`r icons::icon_style(icons::academicons("lattes"), fill = "#2268bc")`](http://lattes.cnpq.br/9761288418931193)
+![](img/fabiana.png)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#bc0170")`](mailto:fabiana.santos-oliveira@unesp.br)
 </center>
 :::
 
@@ -104,13 +101,13 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 <center>
 <br>
 ![](img/felipe.png)
-[`r icons::icon_style(icons::fontawesome("link"), fill = "#2268bc")`](https://mauriciovancine.github.io/)
-[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:mauricio.vancine@gmail.com)
-[`r icons::icon_style(icons::academicons("cv"), fill = "#2268bc")`](https://mauriciovancine.github.io/cv/cv-mauricio-vancine-pt-academic-complete.html)
-[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#2268bc")`](https://twitter.com/mauriciovancine)
-[`r icons::icon_style(icons::fontawesome("github"), fill = "#2268bc")`](https://github.com/mauriciovancine)
-[`r icons::icon_style(icons::academicons("orcid"), fill = "#2268bc")`](https://orcid.org/0000-0001-9650-7575)
-[`r icons::icon_style(icons::academicons("lattes"), fill = "#2268bc")`](http://lattes.cnpq.br/9761288418931193)
+[`r icons::icon_style(icons::fontawesome("link"), fill = "#bc0170")`](https://mauriciovancine.github.io/)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#bc0170")`](mailto:mauricio.vancine@gmail.com)
+[`r icons::icon_style(icons::academicons("cv"), fill = "#bc0170")`](https://mauriciovancine.github.io/cv/cv-mauricio-vancine-pt-academic-complete.html)
+[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#bc0170")`](https://twitter.com/mauriciovancine)
+[`r icons::icon_style(icons::fontawesome("github"), fill = "#bc0170")`](https://github.com/mauriciovancine)
+[`r icons::icon_style(icons::academicons("orcid"), fill = "#bc0170")`](https://orcid.org/0000-0001-9650-7575)
+[`r icons::icon_style(icons::academicons("lattes"), fill = "#bc0170")`](http://lattes.cnpq.br/9761288418931193)
 </center>
 :::
 
@@ -129,11 +126,11 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 ::: {.column width="40%"}
 <center>
 <br>
-!["C:\Users\vicas\OneDrive\Documentos\GERE\slides\00_apresentacao\img\victor s.png"](img/victor.png)
-[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:vicasagrand@outlook.com)
-[`r icons::icon_style(icons::fontawesome("github"), fill = "#2268bc")`](https://github.com/vcasagra)
-[`r icons::icon_style(icons::academicons("orcid"), fill = "#2268bc")`](https://orcid.org/0009-0008-3130-4628)
-[`r icons::icon_style(icons::academicons("lattes"), fill = "#2268bc")`](https://lattes.cnpq.br/3003429785010215)
+![](img/victor s.png)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#bc0170")`](mailto:vicasagrand@outlook.com)
+[`r icons::icon_style(icons::fontawesome("github"), fill = "#bc0170")`](https://github.com/vcasagra)
+[`r icons::icon_style(icons::academicons("orcid"), fill = "#bc0170")`](https://orcid.org/0009-0008-3130-4628)
+[`r icons::icon_style(icons::academicons("lattes"), fill = "#bc0170")`](https://lattes.cnpq.br/3003429785010215)
 </center>
 :::
 
@@ -157,13 +154,13 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 <center>
 <br>
 ![](img/mauricio.png)
-[`r icons::icon_style(icons::fontawesome("link"), fill = "#2268bc")`](https://mauriciovancine.github.io/)
-[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:mauricio.vancine@gmail.com)
-[`r icons::icon_style(icons::academicons("cv"), fill = "#2268bc")`](https://mauriciovancine.github.io/cv/cv-mauricio-vancine-pt-academic-complete.html)
-[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#2268bc")`](https://twitter.com/mauriciovancine)
-[`r icons::icon_style(icons::fontawesome("github"), fill = "#2268bc")`](https://github.com/mauriciovancine)
-[`r icons::icon_style(icons::academicons("orcid"), fill = "#2268bc")`](https://orcid.org/0000-0001-9650-7575)
-[`r icons::icon_style(icons::academicons("lattes"), fill = "#2268bc")`](http://lattes.cnpq.br/9761288418931193)
+[`r icons::icon_style(icons::fontawesome("link"), fill = "#bc0170")`](https://mauriciovancine.github.io/)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#bc0170")`](mailto:mauricio.vancine@gmail.com)
+[`r icons::icon_style(icons::academicons("cv"), fill = "#bc0170")`](https://mauriciovancine.github.io/cv/cv-mauricio-vancine-pt-academic-complete.html)
+[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#bc0170")`](https://twitter.com/mauriciovancine)
+[`r icons::icon_style(icons::fontawesome("github"), fill = "#bc0170")`](https://github.com/mauriciovancine)
+[`r icons::icon_style(icons::academicons("orcid"), fill = "#bc0170")`](https://orcid.org/0000-0001-9650-7575)
+[`r icons::icon_style(icons::academicons("lattes"), fill = "#bc0170")`](http://lattes.cnpq.br/9761288418931193)
 </center>
 :::
 
@@ -193,10 +190,10 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 <center>
 <br>
 ![](img/miltinho.png)
-[`r icons::icon_style(icons::fontawesome("link"), fill = "#2268bc")`](https://leec.eco.br/)
-[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#2268bc")`](mailto:miltinho.astronauta@gmail.com)
-[`r icons::icon_style(icons::academicons("orcid"), fill = "#2268bc")`](https://orcid.org/0000-0002-4312-202X)
-[`r icons::icon_style(icons::academicons("lattes"), fill = "#2268bc")`](http://lattes.cnpq.br/4158685235743119)
+[`r icons::icon_style(icons::fontawesome("link"), fill = "#bc0170")`](https://leec.eco.br/)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#bc0170")`](mailto:miltinho.astronauta@gmail.com)
+[`r icons::icon_style(icons::academicons("orcid"), fill = "#bc0170")`](https://orcid.org/0000-0002-4312-202X)
+[`r icons::icon_style(icons::academicons("lattes"), fill = "#bc0170")`](http://lattes.cnpq.br/4158685235743119)
 </center>
 :::
 
