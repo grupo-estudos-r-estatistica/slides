@@ -19,6 +19,8 @@ format:
 
 # Grupo de Estudos em R e Estatística (GERE)
 
+![](img/gere id.png)
+
 ## Grupo de Estudos em R e Estatística (GERE)
 
 **Objetivos**
