@@ -100,14 +100,8 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 ::: {.column width="40%"}
 <center>
 <br>
-![](img/felipe.png)
-[`r icons::icon_style(icons::fontawesome("link"), fill = "#bc0170")`](https://mauriciovancine.github.io/)
-[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#bc0170")`](mailto:mauricio.vancine@gmail.com)
-[`r icons::icon_style(icons::academicons("cv"), fill = "#bc0170")`](https://mauriciovancine.github.io/cv/cv-mauricio-vancine-pt-academic-complete.html)
-[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#bc0170")`](https://twitter.com/mauriciovancine)
-[`r icons::icon_style(icons::fontawesome("github"), fill = "#bc0170")`](https://github.com/mauriciovancine)
-[`r icons::icon_style(icons::academicons("orcid"), fill = "#bc0170")`](https://orcid.org/0000-0001-9650-7575)
-[`r icons::icon_style(icons::academicons("lattes"), fill = "#bc0170")`](http://lattes.cnpq.br/9761288418931193)
+!["C:\Users\vicas\OneDrive\Documentos\GERE\slides\00_apresentacao\img\felipe.png"](img/felipe.png)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#bc0170")`](mailto:fripalvarez@gmail.com)
 </center>
 :::
 
@@ -115,7 +109,9 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 
 - Comitê do GERE
 
-- Graduando em Biologia
+- Mestrando em Ecologia
+
+- Bacharel em Ciências Biológicas
 
 :::
 :::
@@ -139,6 +135,8 @@ Todo o material está e estará disponível no [GitHub](https://github.com/grupo
 - Coordenador do GERE
 
 - Graduando em Ecologia
+
+- Membro do Labic
 
 - Graduado em Relações Internacionais
 
