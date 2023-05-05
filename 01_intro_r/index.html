@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.340">
+
+  <meta name="author" content="Maurício Vancine">
+  <title>Grupo de Estudos em R e Estatística (GERE)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section class="quarto-title-block center">
+  <h1 class="title">Grupo de Estudos em R e Estatística (GERE)</h1>
+  <p class="subtitle">Cap. 04 - Introdução ao R</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://mauriciovancine.github.io/">Maurício Vancine</a> 
+</div>
+</div>
+</div>
+
+  <p class="date">5 de maio de 2023</p>
+</section>
+<section class="slide level2">
+<h2>Grupo de Estudos em R e Estatística (GERE)</h2>
+<p><strong>Objetivos</strong></p>
+<ul>
+<li><p>Difusão e capacitação no uso da linguagem R e sua aplicação em abordagem quantitativas e estatísticas</p></li>
+<li><p>Conformidade com o Art. 2º da Portaria UNESP 69/2022 (Ligas acadêmicas)</p></li>
+<li><p>Aprimorar a formação técnico-científica e humanística dos graduandos e pós-graduandos</p></li>
+<li><p>Fomentar um espaço de convivência e aprendizado entre os membros da comunidade unespiana</p></li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Grupo de Estudos em R e Estatística (GERE)</h2>
+<p><strong>Funcionamento: Estatuto e Plano Acadêmico</strong></p>
+<ul>
+<li><p>8 horas/mês com presença mínima de 75% (sujeito à sanções, exceto em casos de falta justificada e aprovada pelo comitê)</p></li>
+<li><p>Comitê gestor democraticamente eleito por Assembleia Geral e sujeito à avaliações periódicas</p></li>
+<li><p>É um dever dos associados a conduta ética e pró-ativa, que preserve a respeitabilidade da liga e promova seus objetivos</p></li>
+</ul>
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Comunicação</h1>
+
+</section>
+<section class="slide level2">
+<h2>Discord</h2>
+<p>Vamos concentrar a comunicação pelo Discord</p>
+<br>
+<center>
+<img src="img/discord.png" style="width:40%">
+</center>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Material</h1>
+
+</section>
+<section class="slide level2">
+<h2>GitHub</h2>
+<p>Todo o material está e estará disponível no <a href="https://github.com/grupo-estudos-r-estatistica">GitHub</a></p>
+<center>
+<img src="img/github.png" style="width:50%">
+</center>
+<div class="footer">
+<p><a href="https://github.com/grupo-estudos-r-estatistica">GitHub</a></p>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Proposta</h1>
+
+</section>
+<section class="slide level2">
+<h2>Análises Ecológicas no R</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<center>
+<img src="img/aer.jpeg" href="https://analises-ecologicas.com/" style="width:90%">
+</center>
+</div><div class="column" style="width:60%;">
+<ul>
+<li><p>15 capítulos: linguagem R, tidyverse, perguntas em ecologia, análises univariadas, multivariadas e geoespaciais</p></li>
+<li><p><a href="https://analises-ecologicas.com/">bookdown</a></p></li>
+<li><p><a href="https://canal6.com.br/livreacesso/livro/analises-ecologicas-no-r/">PDF</a></p></li>
+<li><p><a href="https://www.amazon.com.br/An%C3%A1lises-ecol%C3%B3gicas-Ferdo-Rodrigues-Silva/dp/857917564X/ref=sr_1_1?keywords=9788579175640&amp;qid=1654379366&amp;sr=8-1">Amazon</a></p></li>
+<li><p><a href="https://github.com/paternogbc/livro_aer">Código Fonte</a></p></li>
+<li><p><a href="https://www.youtube.com/channel/UCLSVSCnmvf2k6OoWZCnEO4w">YouTube</a></p></li>
+</ul>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://analises-ecologicas.com/">Da Silva et al.&nbsp;(2022)</a></p>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Princípios de Estatística em Ecologia</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<center>
+<img src="img/pee.jpg" href="https://loja.grupoa.com.br/principios-de-estatistica-em-ecologia9788536324326-p991743" style="width:90%">
+</center>
+</div><div class="column" style="width:60%;">
+<ol type="1">
+<li>Introdução à probabilidade</li>
+<li>Variáveis aleatórias e distribuição de probabilidade</li>
+<li>Estatística descritiva</li>
+<li>Formulando e testando hipóteses</li>
+<li>Três estruturas para análises estatísticas</li>
+<li>Delineando estudos de campo com sucesso</li>
+<li>Um bestiário de delineamento</li>
+<li>Gestão e curadoria de dados</li>
+<li>Regressão</li>
+<li>Análise de variância</li>
+<li>Análise de dados categóricos</li>
+<li>Análise de dados multivariados</li>
+</ol>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://loja.grupoa.com.br/principios-de-estatistica-em-ecologia9788536324326-p991743">Gotelli &amp; Ellison (2010)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>IMPORTANTE!!!</h2>
+<p><strong>Estamos num espaço seguro e amigável</strong></p>
+<p>Sintam-se à vontade para me interromper e tirar dúvidas</p>
+<center>
+<img src="img/general_starwars_teamwork.png" style="width:50%">
+</center>
+<div class="footer">
+<p><a href="https://twitter.com/allison_horst">@allison_horst</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Linguagem R</h2>
+<p>O R é uma <strong>linguagem de programação livre</strong> (<em>open source</em>), direcionada à <strong>manipulação, análise e visualização de dados</strong>, com diversas <strong>expansões</strong> (<em>pacotes</em>) para <strong>dados</strong> ou <strong>análises</strong> específicas</p>
+<center>
+<img src="img/r_logo.svg" style="width:40%">
+</center>
+<div class="footer">
+<p><a href="https://www.r-project.org/">R</a></p>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Histórico - Linguagem S</h2>
+<p><strong>John M. Chambers (Stanford University, CA, EUA)</strong></p>
+<p><br></p>
+<p><strong>Versões</strong></p>
+<ul>
+<li>Old S (1976-1987)</li>
+<li>New S (1988-1997)</li>
+<li>S4 (1998)</li>
+</ul>
+<p><strong>IDE (<em>Integrated Development Environment</em>)</strong></p>
+<ul>
+<li>Interface: S-PLUS (1988-2008)</li>
+</ul>
+<p><img data-src="img/person_john_chambers.jpg" class="absolute" style="top: 200px; right: 10px; width: 400px; height: 400px; "></p>
+<div class="footer">
+<p><a href="http://vita.had.co.nz/papers/r-s.pdf">Wickham (2013)</a></p>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Histórico - Linguagem R</h2>
+<p><strong>Robert Gentleman e Ross Ihaka (Auckland University, NZ)</strong></p>
+<p><br></p>
+<p><strong>Versões</strong></p>
+<ul>
+<li>Desenvolvimento (1993-2000)</li>
+<li>Versão 1 (2000-2004)</li>
+<li>Versão 2 (2004-2013)</li>
+<li>Versão 3 (2013-2020)</li>
+<li>Versão 4 (2020-atual)</li>
+</ul>
+<p><strong>IDE (<em>Integrated Development Environment</em>)</strong></p>
+<ul>
+<li>Interface: RStudio (2011-atual)</li>
+<li>Atualmente: <strong>R Core Team</strong></li>
+</ul>
+<p><img data-src="img/person_gentleman_ihaka.jpg" class="absolute" style="top: 200px; right: -50px; width: 550px; height: 400px; "></p>
+<div class="footer">
+<p><a href="http://vita.had.co.nz/papers/r-s.pdf">Wickham (2013)</a></p>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Histórico - Linguagem R</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<center>
+<img src="img/r_history.png" style="width:75%">
+</center>
+</div>
+</div><div class="column" style="width:50%;">
+<div>
+<center>
+<img src="img/r_history_plot.png" style="width:100%">
+</center>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://doi.org/10.3390/life12050648">Giorgi et al.&nbsp;(2022)</a></p>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Aplicações</h2>
+<p><strong>Manipulação, visualização e análise de dados</strong></p>
+<ul>
+<li>Estatísticas univariadas e multivariadas</li>
+<li>Análises de dados ecológicos</li>
+<li>Análise de dados espaciais, temporais e sonoros</li>
+<li>Análise de dados funcionais, genéticos e filogenéticos</li>
+<li>Análise de dados geoespaciais e sensoriamento remoto</li>
+<li>Visualização de todos os tipos de dados anteriores</li>
+</ul>
+<p><strong>R Markdown e quarto</strong></p>
+<ul>
+<li>Textos em HTML, PDF, Word, ODT, Markdown</li>
+<li>Slides, Websites, Blogs, Livros e Artigos</li>
+<li>Shiny</li>
+</ul>
+<p><img data-src="img/r_markdown_output_formats.png" class="absolute" style="top: 150px; right: -100px; width: 400px; height: 400px; "> <img data-src="img/quarto.png" class="absolute" style="top: 570px; right: -100px; width: 400px; height: 100px; "></p>
+<div class="footer">
+<p><a href="https://rmarkdown.rstudio.com/">R Markdown</a>, <a href="https://shiny.rstudio.com/">shiny</a>, <a href="https://quarto.org/">quarto</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>IDE</h2>
+<p>Ambiente de Desenvolvimento Integrado (<em>Integrated Development Environment</em>)</p>
+<p><br><br></p>
+<center>
+<img src="img/rstudio_logo.svg" style="width:80%">
+</center>
+<div class="footer">
+<p><a href="https://posit.co/downloads/">RStudio</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>IDE</h2>
+<p>Ambiente de Desenvolvimento Integrado (<em>Integrated Development Environment</em>)</p>
+<p><img data-src="img/r_rstudio01.png" class="absolute" style="top: 200px; right: 180px; width: 700px; height: 180px; "> <img data-src="img/r_rstudio02.png" class="absolute" style="top: 370px; right: 180px; width: 700px; height: 280px; "></p>
+<div class="footer">
+<p><a href="https://posit.co/downloads/">Ismay &amp; Kim (2020)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Interface</h2>
+<center>
+<img src="img/rstudio.png" style="width:100%">
+</center>
+<div class="footer">
+<p><a href="https://www.rstudio.com/">RStudio</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Projeto R (.Rproj)</h2>
+<ul>
+<li>Facilita o trabalho em múltiplos ambientes</li>
+<li>Cada projeto possui seu diretório, documentos e workspace</li>
+<li>Permite controle de versão (git e GitHub)</li>
+</ul>
+<p><br></p>
+<center>
+<img src="img/rstudio_project_logo.png" style="width:25%">
+</center>
+<div class="footer">
+<p><a href="https://www.rstudio.com/">RStudio</a></p>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Antes de começarmos…</h1>
+
+</section>
+<section class="slide level2">
+<h2>Conferindo os computadores</h2>
+<center>
+<img src="img/general_hard_soft_bg.png" style="width:80%">
+</center>
+<div class="footer">
+<p><a href="https://www.instagram.com/cafecomcodigo/?hl=pt">Café com Código</a></p>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1></h1>
+<center>
+<img src="img/code.png" style="width:45%">
+</center>
+</section>
+<section class="slide level2">
+<h2>Console</h2>
+<p>O console é onde a linguagem R instalada é carregada para executar os códigos</p>
+<center>
+<img src="img/rstudio_script.png" style="width:55%">
+</center>
+<div class="footer">
+<p><a href="https://www.rstudio.com/">RStudio</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Console</h2>
+<ul>
+<li><p>Na janela do console aparece o símbolo <code>&gt;</code>, seguido de uma barra vertical <code>|</code> que fica piscando (cursor), onde digitamos ou enviamos nossos códigos do script</p></li>
+<li><p>Vamos digitar <code>10 + 2</code> e apertar a tecla <code>Enter</code> para que essa operação seja executada</p></li>
+<li><p>O resultado retorna o valor <code>12</code>, precedido do valor <code>1</code> entre colchetes <code>[1]</code></p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Console</h2>
+<ul>
+<li><p>Os colchetes <code>[]</code> demonstram a posição do elemento numa sequência de valores</p></li>
+<li><p>Vamos criar uma sequência usando o operador <code>:</code> para demonstrar isso</p></li>
+<li><p>O número que aparecer nos colchetes vai depender da largura das janelas</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">42</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+[26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Console</h2>
+<p><strong>Noções de programação</strong></p>
+<p>Número inteiro (<em>integer</em>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Número decimal (<em>float</em> ou <em>double</em>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fl">1.2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.2</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Texto entre aspas simples (<code>''</code>) ou duplas (<code>""</code>) (<em>character</em> ou <em>string</em>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="st">"Este é o número 1"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Este é o número 1"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Lógico (letras maiúsculas) (<em>booleano</em>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="cn">TRUE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="cn">FALSE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Script</h2>
+<p>Onde os códigos são escritos e salvos no formato .R</p>
+<ul>
+<li>Atalho: <code>ctrl + shift + N</code></li>
+</ul>
+<center>
+<img src="img/rstudio_script.jpg" style="width:80%">
+</center>
+</section>
+<section class="slide level2">
+<h2>Script</h2>
+<ul>
+<li><p>Os códigos devem ser digitados preferencialmente no script</p></li>
+<li><p>Para executar um código, deixem o cursor em qualquer lugar da linha</p></li>
+<li><p>Atalho: <code>ctrl + enter</code></p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="dv">1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Script</h2>
+<p><strong>Salvar um script</strong></p>
+<ul>
+<li>Atalho: <code>ctrl + S</code></li>
+</ul>
+<center>
+<img src="img/rstudio_script.png" style="width:50%">
+</center>
+</section>
+<section class="slide level2">
+<h2>Script</h2>
+<p><strong>Comentários (#)</strong></p>
+<ul>
+<li><p>Comentários não são lidos pelo R e descrevem informações em nosso script</p></li>
+<li><p>São representados pelo <code>#</code> (hash) ou <code>#'</code> (hash-linha)</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># comentarios</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="co"># o r nao le o codigo depois do # (hash)</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="dv">42</span> <span class="co"># essas palavras nao sao executadas, apenas o 42</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Script</h2>
+<p><strong>Comentários (#)</strong></p>
+<ul>
+<li><p>Sempre comece um script com um cabeçalho</p></li>
+<li><p>Ajuda a lembrar o que o script faz e quando foi escrito</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co">#' ----</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="co">#' título: modelos estatisticos em ecologia</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="co">#' autor: seu nome</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="co">#' data: 2023-04-26</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="co">#' ----</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1></h1>
+<center>
+<img src="img/general_comment_gandalf.jpg" style="width:50%">
+</center>
+</section>
+<section class="slide level2">
+<h2>Operadores</h2>
+<p><strong>Operadores aritméticos (retorna números)</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Operador</th>
+<th style="text-align: center;">Descrição</th>
+<th style="text-align: center;">Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">Adição</td>
+<td style="text-align: center;">a + b</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">Subtração</td>
+<td style="text-align: center;">a - b</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">Multiplicação</td>
+<td style="text-align: center;">a * b</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">/</td>
+<td style="text-align: center;">Divisão</td>
+<td style="text-align: center;">a / b</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">%%</td>
+<td style="text-align: center;">Resto da divisão</td>
+<td style="text-align: center;">a %% b</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">%/%</td>
+<td style="text-align: center;">Quociente da divisão</td>
+<td style="text-align: center;">a %/% b</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">^</td>
+<td style="text-align: center;">Potenciação</td>
+<td style="text-align: center;">a^b</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+<h2>Operadores</h2>
+<p><strong>Operadores relacionais (retorna TRUE|FALSE)</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Operador</th>
+<th style="text-align: center;">Descrição</th>
+<th style="text-align: center;">Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">&lt;</td>
+<td style="text-align: center;">Menor</td>
+<td style="text-align: center;">a &lt; b</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&gt;</td>
+<td style="text-align: center;">Maior</td>
+<td style="text-align: center;">a &gt; b</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&lt;=</td>
+<td style="text-align: center;">Menor ou igual</td>
+<td style="text-align: center;">a &lt;= b</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&gt;=</td>
+<td style="text-align: center;">Maior ou igual</td>
+<td style="text-align: center;">a &gt; = b</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">==</td>
+<td style="text-align: center;">Igual</td>
+<td style="text-align: center;">a == b</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">!=</td>
+<td style="text-align: center;">Não igual (diferente)</td>
+<td style="text-align: center;">a!=b</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+<h2>Operadores</h2>
+<p><strong>Ordem das operações aritméticas</strong></p>
+<p><br></p>
+<p><code>()</code> &gt; <code>^</code> &gt; <code>*</code> ou <code>/</code> &gt; <code>+</code> ou <code>-</code></p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># sem especificar - segue a ordem das operações</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="dv">1</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">/</span> <span class="dv">2</span> <span class="sc">^</span> <span class="dv">2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.5</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># especificando - segue a ordem dos parênteses</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>((<span class="dv">1</span> <span class="sc">*</span> <span class="dv">2</span>) <span class="sc">+</span> (<span class="dv">2</span> <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">^</span> <span class="dv">2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Objetos</h2>
+<p>Palavras que atribuímos (guardamos) dados possibilitando sua manipulação</p>
+<ul>
+<li><p>Atribuição (<code>&lt;-</code>)</p></li>
+<li><p>palavra &lt;- dados</p></li>
+<li><p>Atalho: <code>alt + -</code></p></li>
+</ul>
+<p><img data-src="img/general_assign.jpg" class="absolute" style="top: 200px; right: 50px; width: 380px; height: 480px; "></p>
+</section>
+<section class="slide level2">
+<h2>Objetos</h2>
+<p>Vamos atribuir o valor <code>10</code> à palavra <code>eco</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># atribuicao - simbolo (&lt;-)</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>eco <span class="ot">&lt;-</span> <span class="dv">10</span> </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1></h1>
+<center>
+<img src="img/gif_where.gif" style="width:100%">
+</center>
+</section>
+<section class="slide level2">
+<h2>Objetos</h2>
+<ul>
+<li><p>Sempre confira a atribuição</p></li>
+<li><p><strong>Dica</strong>: chame o objeto novamente</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># atribuicao - simbolo (&lt;-)</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>eco <span class="ot">&lt;-</span> <span class="dv">10</span> </span>
+<span id="cb27-3"><a href="#cb27-3"></a>eco</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Objetos</h2>
+<p><strong>Seja criativo</strong></p>
+<p>O R sobrescreve os valores dos objetos com o mesmo nome</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># eco vale 10</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>eco <span class="ot">&lt;-</span> <span class="dv">10</span> </span>
+<span id="cb29-3"><a href="#cb29-3"></a>eco</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># agora eco vale 2</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>eco <span class="ot">&lt;-</span> <span class="dv">2</span> </span>
+<span id="cb31-3"><a href="#cb31-3"></a>eco</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Objetos</h2>
+<p><strong>Seja criativo, mas nem tanto…</strong></p>
+<p>O R tem limitações ao nomear objetos!</p>
+<ol type="1">
+<li><p>Começar por letras (<code>a-z</code> ou <code>A-Z</code>) ou pontos (<code>.</code>)</p></li>
+<li><p>Conter letras (<code>a-z</code> ou <code>A-Z</code>), números (<code>0-9</code>), underscores (<code>_</code>) ou pontos (<code>.</code>)</p></li>
+<li><p><em>Case-sensitive</em>, i.e., ele difere letras maiúsculas de minúsculas</p></li>
+<li><p>Evitar utilizar letras maiúsculas, acentos ou cedilha (<code>ç</code>)</p></li>
+<li><p>Não podem ser iguais a nomes especiais: <code>break, else, FALSE, for, function, if, Inf, NA, NaN, next, repeat, return, TRUE, while</code></p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="cf">for</span> <span class="ot">&lt;-</span> <span class="dv">1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: &lt;text&gt;:1:5: unexpected assignment
+1: for &lt;-
+        ^</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Objetos</h2>
+<p><strong>Ambiente (<em>Environment</em>)</strong></p>
+<p>Os objetos podem ser visualizados no painel <em>Environment</em></p>
+<center>
+<img src="img/rstudio_script.png" style="width:50%">
+</center>
+</section>
+<section class="slide level2">
+<h2>Objetos</h2>
+<p>Podemos utilizar objetos para fazer operações</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># definir dois objetos</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>eco1 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>eco2 <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># operacoes com objetos</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>eco1 <span class="sc">+</span> eco2 <span class="co"># adicao</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>eco1 <span class="sc">-</span> eco2 <span class="co"># subtracao</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>eco1 <span class="sc">*</span> eco2 <span class="co"># multiplicacao</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>eco1 <span class="sc">/</span> eco2 <span class="co"># divisao</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Objetos</h2>
+<p>Podemos utilizar objetos para atribuir resultados de operações</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># operacoes com objetos e atribuicao</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>adi <span class="ot">&lt;-</span> eco1 <span class="sc">+</span> eco2 <span class="co"># adicao</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>adi</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>sub <span class="ot">&lt;-</span> eco1 <span class="sc">-</span> eco2 <span class="co"># subtracao</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>sub</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>mul <span class="ot">&lt;-</span> eco1 <span class="sc">*</span> eco2 <span class="co"># multiplicacao</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>mul</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>div <span class="ot">&lt;-</span> eco1 <span class="sc">/</span> eco2 <span class="co"># divisao</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>div</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Objetos</h2>
+<p><strong>Tipos de objetos</strong></p>
+<center>
+<img src="img/r_data_structures_general.png" style="width:70%">
+</center>
+</section>
+<section class="slide level2 smaller">
+<h2>Funções</h2>
+<p>Códigos que realizam operações em argumentos</p>
+<ul>
+<li>Estrutura de uma função:</li>
+</ul>
+<p><code>nome_da_funcao(argumento1, argumento2)</code></p>
+<p><br></p>
+<ol type="1">
+<li><strong>Nome da função</strong>: remete ao que ela faz (inglês)</li>
+<li><strong>Parênteses</strong>: limitam a função</li>
+<li><strong>Argumentos</strong>: onde a função atuará</li>
+<li><strong>Vírgulas</strong>: separam os argumentos</li>
+</ol>
+<p><img data-src="img/code_function_annotated.png" class="absolute" style="top: 350px; right: -100px; width: 600px; height: 300px; "></p>
+</section>
+<section class="slide level2">
+<h2>Funções</h2>
+<p><strong>Exemplos</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># soma</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">sum</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># soma de objetos</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">sum</span>(eco1, eco2)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># soma de objetos atribuidos a objetos</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>eco_sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(eco1, eco2)</span>
+<span id="cb56-3"><a href="#cb56-3"></a>eco_sum</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Funções</h2>
+<p><strong>Argumentos</strong></p>
+<p>Os argumentos podem ser de dois tipos:</p>
+<ol type="1">
+<li><p><strong>Objetos ou valores</strong>: dados onde a função irá atuar</p></li>
+<li><p><strong>Parâmetros</strong>: mudam o comportamento da função (texto = <code>TRUE</code>, <code>FALSE</code> ou <code>"texto"</code>)</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Funções</h2>
+<p><strong>Argumentos como valores</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># funcoes - argumentos como valores</span></span>
+<span id="cb62-2"><a href="#cb62-2"></a><span class="fu">sum</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="fu">prod</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Argumentos como objetos</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># funcoes - argumentos como objetos</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a><span class="fu">sum</span>(eco1, eco2)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">prod</span>(eco1, eco2)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Funções</h2>
+<p><strong>Argumentos como parâmetros</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># repeticao - vezes</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">times =</span> <span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="co"># repeticao - cada</span></span>
+<span id="cb72-2"><a href="#cb72-2"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Funções</h2>
+<p><strong>Atribuição de resultados a objetos</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># atribuicao dos resultados</span></span>
+<span id="cb74-2"><a href="#cb74-2"></a>rep_times <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">times =</span> <span class="dv">5</span>)</span>
+<span id="cb74-3"><a href="#cb74-3"></a>rep_times</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>rep_each <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">5</span>)</span>
+<span id="cb76-2"><a href="#cb76-2"></a>rep_each</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Funções</h2>
+<p><strong>Atribuição, função e linha temporal</strong></p>
+<p>Criar dois objetos</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="co"># criar dois objetos</span></span>
+<span id="cb78-2"><a href="#cb78-2"></a>foo <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb78-3"><a href="#cb78-3"></a>bar <span class="ot">&lt;-</span> <span class="dv">3</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Somar esses objetos e atribuição</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a><span class="co"># somar e atribuir</span></span>
+<span id="cb79-2"><a href="#cb79-2"></a>su <span class="ot">&lt;-</span> <span class="fu">sum</span>(foo, bar)</span>
+<span id="cb79-3"><a href="#cb79-3"></a>su</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p>Raiz quadrada e atribuição</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="co"># raiz e atribuir</span></span>
+<span id="cb81-2"><a href="#cb81-2"></a>sq <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(su)</span>
+<span id="cb81-3"><a href="#cb81-3"></a>sq</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.236068</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Funções</h2>
+<p><strong>Atribuição, função e linha temporal</strong></p>
+<ol type="1">
+<li><p>Atribuição de dados a objetos</p></li>
+<li><p>Funções que operam e mudam esses dados</p></li>
+<li><p>Nova atribuição desses resultados a novos objetos</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a><span class="co"># criar dois objetos</span></span>
+<span id="cb83-2"><a href="#cb83-2"></a>foo <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb83-3"><a href="#cb83-3"></a>bar <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb83-4"><a href="#cb83-4"></a></span>
+<span id="cb83-5"><a href="#cb83-5"></a><span class="co"># somar e atribuir</span></span>
+<span id="cb83-6"><a href="#cb83-6"></a>su <span class="ot">&lt;-</span> <span class="fu">sum</span>(foo, bar)</span>
+<span id="cb83-7"><a href="#cb83-7"></a></span>
+<span id="cb83-8"><a href="#cb83-8"></a><span class="co"># raiz e atribuir</span></span>
+<span id="cb83-9"><a href="#cb83-9"></a>sq <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(su)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Ajuda</h2>
+<p>Descreve as informações de uma função</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="co"># descreve as informacoes de uma funcao</span></span>
+<span id="cb84-2"><a href="#cb84-2"></a><span class="fu">help</span>(<span class="st">"mean"</span>) <span class="co"># arquivo .html</span></span>
+<span id="cb84-3"><a href="#cb84-3"></a>?mean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/r_help.png" class="absolute" style="top: 220px; right: 600px; width: 450px; height: 450px; "></p>
+</div><div class="column" style="width:50%;">
+<p><br> <strong>Description</strong>: descrição da função<br>
+<strong>Usage</strong>: uso da função e argumentos<br>
+<strong>Arguments</strong>: argumentos e suas especificações<br>
+<strong>Details</strong>: detalhes da função<br>
+<strong>Value</strong>: interpretar a saída (<em>output</em>)<br>
+<strong>Note</strong>: notas sobre a função<br>
+<strong>Authors</strong>: autores da função<br>
+<strong>References</strong>: referências bibliográficas da função<br>
+<strong>See also</strong>: funções relacionadas<br>
+<strong>Examples</strong>: exemplos do uso da função</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Pacotes</h2>
+<p>Conjunto de funções extras para executar tarefas específicas</p>
+<center>
+<img src="img/r_packages.svg" style="width:70%">
+</center>
+</section>
+<section class="slide level2">
+<h2>Pacotes</h2>
+<p>Duas fontes</p>
+<ul>
+<li>CRAN (<em>Comprehensive R Archive Network</em>)</li>
+<li>GitHub (Repositório de códigos)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a><span class="co"># numero de pacotes no cran</span></span>
+<span id="cb85-2"><a href="#cb85-2"></a><span class="fu">nrow</span>(<span class="fu">available.packages</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<center>
+<img src="img/r_number_packages.png" style="width:35%">
+</center>
+<div class="footer">
+<p><a href="https://cran.r-project.org/">CRAN</a>, <a href="https://www.r-bloggers.com/2017/03/scraping-cran-with-rvest/">Scraping CRAN with rvest</a></p>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Pacotes</h2>
+<p><strong>Instalação de pacotes</strong></p>
+<ol type="1">
+<li>Download do pacote para o computador (como instalar um software/APP)</li>
+<li>Precisa estar conectado à internet</li>
+<li>O nome do pacote precisa estar entre aspas</li>
+<li>Função (CRAN): <code>install.packages("pacote")</code></li>
+</ol>
+<p><strong>Instalar o pacote vegan</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a><span class="co"># instalar pacotes</span></span>
+<span id="cb86-2"><a href="#cb86-2"></a><span class="fu">install.packages</span>(<span class="st">"vegan"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Verificar pacotes instalados</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a><span class="co"># verificar pacotes instalados</span></span>
+<span id="cb87-2"><a href="#cb87-2"></a><span class="fu">library</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2 smaller">
+<h2>Pacotes</h2>
+<p><strong>Carregamento de pacotes</strong></p>
+<ol type="1">
+<li>Carregar o pacote para o R (como abrir software/APP)</li>
+<li>Carrega-se toda vez que se abre o R</li>
+<li>Não precisa estar conectado à internet</li>
+<li>O nome do pacote não precisa estar entre aspas</li>
+<li>Funções: <code>library(pacote)</code> ou <code>require(pacote)</code></li>
+</ol>
+<p><strong>Carregar o pacote vegan</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a><span class="co"># carregar pacotes</span></span>
+<span id="cb88-2"><a href="#cb88-2"></a><span class="fu">library</span>(vegan)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Verificar pacotes carregados</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a><span class="co"># verificar pacotes carregados</span></span>
+<span id="cb89-2"><a href="#cb89-2"></a><span class="fu">search</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] ".GlobalEnv"        "package:vegan"     "package:lattice"  
+ [4] "package:permute"   "package:stats"     "package:graphics" 
+ [7] "package:grDevices" "package:utils"     "package:datasets" 
+[10] "package:methods"   "Autoloads"         "package:base"     </code></pre>
+</div>
+</div>
+</section></section>
+<section class="title-slide slide level1 center">
+<h1>Principais erros</h1>
+
+</section>
+
+<section class="title-slide slide level1 center">
+<h1>Se seu script rodou sem erros, tem algo errado…</h1>
+
+</section>
+
+<section class="title-slide slide level1 center">
+<h1></h1>
+<center>
+<img src="img/general_make_impossible.png" style="width:60%">
+</center>
+</section>
+
+<section class="title-slide slide level1 center">
+<h1></h1>
+<center>
+<img src="img/gif_bugcat_error.gif" style="width:70%">
+</center>
+</section>
+
+<section class="title-slide slide level1 center">
+<h1></h1>
+<center>
+<img src="img/gif_bugcat_sad.gif" style="width:70%">
+</center>
+</section>
+
+<section>
+<section class="title-slide slide level1 center">
+<h1></h1>
+<p>Help me help you: um bestiário para entender erros e pedir ajuda no R</p>
+<center>
+<img src="img/debugging.png" style="width:40%">
+</center>
+<div class="footer">
+<p><a href="https://anotherecoblog.wordpress.com/2020/08/26/help-me-help-you-um-bestiario-para-entender-erros-e-pedir-ajuda-no-r/">Help me help you: um bestiário para entender erros e pedir ajuda no R</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Principais erros</h2>
+<p><strong>1. Esquecer de completar um código (+)</strong></p>
+<p>Parênteses</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span></span>
+<span id="cb91-2"><a href="#cb91-2"></a>    <span class="sc">+</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: &lt;text&gt;:3:0: unexpected end of input
+1: sum(1, 2
+2:     +
+  ^</code></pre>
+</div>
+</div>
+<p>Aspas</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1"></a><span class="st">"string</span></span>
+<span id="cb93-2"><a href="#cb93-2"></a><span class="st">+</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: &lt;text&gt;:1:1: unexpected INCOMPLETE_STRING
+1: "string
+2: +
+   ^</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Principais erros</h2>
+<p><strong>2. Esquecer da vírgula</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a><span class="fu">sum</span>(<span class="dv">1</span> <span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: &lt;text&gt;:1:7: unexpected numeric constant
+1: sum(1 2
+          ^</code></pre>
+</div>
+</div>
+<p><br></p>
+<p><strong>3. Chamar um objeto errado</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb97-2"><a href="#cb97-2"></a>OBJ</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'OBJ' not found</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Principais erros</h2>
+<p><strong>4. Esquecer de carregar um pacote</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1"></a><span class="co"># carregar dados</span></span>
+<span id="cb99-2"><a href="#cb99-2"></a><span class="fu">data</span>(dune)</span>
+<span id="cb99-3"><a href="#cb99-3"></a></span>
+<span id="cb99-4"><a href="#cb99-4"></a><span class="co"># funcao do pacote vegan</span></span>
+<span id="cb99-5"><a href="#cb99-5"></a><span class="fu">decostand</span>(dune, <span class="st">"hell"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in decostand(dune, "hell"): could not find function "decostand"</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Principais erros</h2>
+<p><strong>4. Esquecer de carregar um pacote</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a><span class="co"># carregar o pacote</span></span>
+<span id="cb101-2"><a href="#cb101-2"></a><span class="fu">library</span>(vegan)</span>
+<span id="cb101-3"><a href="#cb101-3"></a></span>
+<span id="cb101-4"><a href="#cb101-4"></a><span class="do">## carregar dados</span></span>
+<span id="cb101-5"><a href="#cb101-5"></a><span class="fu">data</span>(dune)</span>
+<span id="cb101-6"><a href="#cb101-6"></a></span>
+<span id="cb101-7"><a href="#cb101-7"></a><span class="do">## funcao do pacote vegan</span></span>
+<span id="cb101-8"><a href="#cb101-8"></a><span class="fu">decostand</span>(dune, <span class="st">"hell"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Achimill  Agrostol  Airaprae  Alopgeni  Anthodor  Bellpere  Bromhord
+1  0.2357023 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+2  0.2672612 0.0000000 0.0000000 0.2182179 0.0000000 0.2672612 0.3086067
+3  0.0000000 0.3162278 0.0000000 0.4183300 0.0000000 0.2236068 0.0000000
+4  0.0000000 0.4216370 0.0000000 0.2108185 0.0000000 0.2108185 0.2581989
+5  0.2156655 0.0000000 0.0000000 0.0000000 0.3049971 0.2156655 0.2156655
+6  0.2041241 0.0000000 0.0000000 0.0000000 0.2500000 0.0000000 0.0000000
+7  0.2236068 0.0000000 0.0000000 0.0000000 0.2236068 0.0000000 0.2236068
+8  0.0000000 0.3162278 0.0000000 0.3535534 0.0000000 0.0000000 0.0000000
+9  0.0000000 0.2672612 0.0000000 0.2672612 0.0000000 0.0000000 0.0000000
+10 0.3049971 0.0000000 0.0000000 0.0000000 0.3049971 0.2156655 0.3049971
+11 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+12 0.0000000 0.3380617 0.0000000 0.4780914 0.0000000 0.0000000 0.0000000
+13 0.0000000 0.3892495 0.0000000 0.3892495 0.0000000 0.0000000 0.0000000
+14 0.0000000 0.4082483 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+15 0.0000000 0.4170288 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+16 0.0000000 0.4605662 0.0000000 0.3481553 0.0000000 0.0000000 0.0000000
+17 0.3651484 0.0000000 0.3651484 0.0000000 0.5163978 0.0000000 0.0000000
+18 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.2721655 0.0000000
+19 0.0000000 0.0000000 0.3110855 0.0000000 0.3592106 0.0000000 0.0000000
+20 0.0000000 0.4016097 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+    Chenalbu  Cirsarve  Comapalu  Eleopalu  Elymrepe  Empenigr  Hyporadi
+1  0.0000000 0.0000000 0.0000000 0.0000000 0.4714045 0.0000000 0.0000000
+2  0.0000000 0.0000000 0.0000000 0.0000000 0.3086067 0.0000000 0.0000000
+3  0.0000000 0.0000000 0.0000000 0.0000000 0.3162278 0.0000000 0.0000000
+4  0.0000000 0.2108185 0.0000000 0.0000000 0.2981424 0.0000000 0.0000000
+5  0.0000000 0.0000000 0.0000000 0.0000000 0.3049971 0.0000000 0.0000000
+6  0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+7  0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+8  0.0000000 0.0000000 0.0000000 0.3162278 0.0000000 0.0000000 0.0000000
+9  0.0000000 0.0000000 0.0000000 0.0000000 0.3779645 0.0000000 0.0000000
+10 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+11 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.2500000
+12 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+13 0.1740777 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+14 0.0000000 0.0000000 0.2886751 0.4082483 0.0000000 0.0000000 0.0000000
+15 0.0000000 0.0000000 0.2948839 0.4662524 0.0000000 0.0000000 0.0000000
+16 0.0000000 0.0000000 0.0000000 0.4923660 0.0000000 0.0000000 0.0000000
+17 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.3651484
+18 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+19 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.2540003 0.4016097
+20 0.0000000 0.0000000 0.0000000 0.3592106 0.0000000 0.0000000 0.0000000
+    Juncarti  Juncbufo  Lolipere  Planlanc   Poaprat   Poatriv  Ranuflam
+1  0.0000000 0.0000000 0.6236096 0.0000000 0.4714045 0.3333333 0.0000000
+2  0.0000000 0.0000000 0.3450328 0.0000000 0.3086067 0.4082483 0.0000000
+3  0.0000000 0.0000000 0.3872983 0.0000000 0.3535534 0.3872983 0.0000000
+4  0.0000000 0.0000000 0.3333333 0.0000000 0.2981424 0.3333333 0.0000000
+5  0.0000000 0.0000000 0.2156655 0.3409972 0.2156655 0.3735437 0.0000000
+6  0.0000000 0.0000000 0.3535534 0.3227486 0.2500000 0.2886751 0.0000000
+7  0.0000000 0.2236068 0.3872983 0.3535534 0.3162278 0.3535534 0.0000000
+8  0.3162278 0.0000000 0.3162278 0.0000000 0.3162278 0.3162278 0.2236068
+9  0.3086067 0.3086067 0.2182179 0.0000000 0.3086067 0.3450328 0.0000000
+10 0.0000000 0.0000000 0.3735437 0.2641353 0.3049971 0.3049971 0.0000000
+11 0.0000000 0.0000000 0.4677072 0.3061862 0.3535534 0.0000000 0.0000000
+12 0.0000000 0.3380617 0.0000000 0.0000000 0.0000000 0.3380617 0.0000000
+13 0.0000000 0.3015113 0.0000000 0.0000000 0.2461830 0.5222330 0.2461830
+14 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.2886751
+15 0.3611576 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.2948839
+16 0.3015113 0.0000000 0.0000000 0.0000000 0.0000000 0.2461830 0.2461830
+17 0.0000000 0.0000000 0.0000000 0.3651484 0.2581989 0.0000000 0.0000000
+18 0.0000000 0.0000000 0.2721655 0.3333333 0.3333333 0.0000000 0.0000000
+19 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+20 0.3592106 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.3592106
+    Rumeacet  Sagiproc  Salirepe  Scorautu  Trifprat  Trifrepe  Vicilath
+1  0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+2  0.0000000 0.0000000 0.0000000 0.3450328 0.0000000 0.3450328 0.0000000
+3  0.0000000 0.0000000 0.0000000 0.2236068 0.0000000 0.2236068 0.0000000
+4  0.0000000 0.3333333 0.0000000 0.2108185 0.0000000 0.1490712 0.0000000
+5  0.3409972 0.0000000 0.0000000 0.2641353 0.2156655 0.2156655 0.0000000
+6  0.3535534 0.0000000 0.0000000 0.2500000 0.3227486 0.3227486 0.0000000
+7  0.2738613 0.0000000 0.0000000 0.2738613 0.2236068 0.2236068 0.0000000
+8  0.0000000 0.2236068 0.0000000 0.2738613 0.0000000 0.2236068 0.0000000
+9  0.2182179 0.2182179 0.0000000 0.2182179 0.0000000 0.2672612 0.0000000
+10 0.0000000 0.0000000 0.0000000 0.2641353 0.0000000 0.3735437 0.1524986
+11 0.0000000 0.2500000 0.0000000 0.3952847 0.0000000 0.3061862 0.2500000
+12 0.2390457 0.3380617 0.0000000 0.2390457 0.0000000 0.2927700 0.0000000
+13 0.0000000 0.2461830 0.0000000 0.2461830 0.0000000 0.2461830 0.0000000
+14 0.0000000 0.0000000 0.0000000 0.2886751 0.0000000 0.5000000 0.0000000
+15 0.0000000 0.0000000 0.0000000 0.2948839 0.0000000 0.2085144 0.0000000
+16 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+17 0.0000000 0.0000000 0.0000000 0.3651484 0.0000000 0.0000000 0.0000000
+18 0.0000000 0.0000000 0.3333333 0.4303315 0.0000000 0.2721655 0.1924501
+19 0.0000000 0.3110855 0.3110855 0.4399413 0.0000000 0.2540003 0.0000000
+20 0.0000000 0.0000000 0.4016097 0.2540003 0.0000000 0.0000000 0.0000000
+    Bracruta  Callcusp
+1  0.0000000 0.0000000
+2  0.0000000 0.0000000
+3  0.2236068 0.0000000
+4  0.2108185 0.0000000
+5  0.2156655 0.0000000
+6  0.3535534 0.0000000
+7  0.2236068 0.0000000
+8  0.2236068 0.0000000
+9  0.2182179 0.0000000
+10 0.2156655 0.0000000
+11 0.3535534 0.0000000
+12 0.3380617 0.0000000
+13 0.0000000 0.0000000
+14 0.0000000 0.4082483
+15 0.4170288 0.0000000
+16 0.3481553 0.3015113
+17 0.0000000 0.0000000
+18 0.4714045 0.0000000
+19 0.3110855 0.0000000
+20 0.3592106 0.3110855</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Principais erros</h2>
+<p><strong>5. Usar o nome da função de forma errônea</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1"></a><span class="fu">colsums</span>(dune)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in colsums(dune): could not find function "colsums"</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1"></a><span class="fu">colSums</span>(dune)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Achimill Agrostol Airaprae Alopgeni Anthodor Bellpere Bromhord Chenalbu 
+      16       48        5       36       21       13       15        1 
+Cirsarve Comapalu Eleopalu Elymrepe Empenigr Hyporadi Juncarti Juncbufo 
+       2        4       25       26        2        9       18       13 
+Lolipere Planlanc  Poaprat  Poatriv Ranuflam Rumeacet Sagiproc Salirepe 
+      58       26       48       63       14       18       20       11 
+Scorautu Trifprat Trifrepe Vicilath Bracruta Callcusp 
+      54        9       47        4       49       10 </code></pre>
+</div>
+</div>
+</section></section>
+<section class="title-slide slide level1 center">
+<h1>Dúvidas?</h1>
+
+</section>
+
+<section class="title-slide slide level1 center">
+<h1>Valeu gente!</h1>
+
+<img src="https://raw.githubusercontent.com/grupo-estudos-r-estatistica/logo/main/featured-hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiada");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiada");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
