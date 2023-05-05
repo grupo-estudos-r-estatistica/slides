@@ -986,4 +986,11 @@ colSums(dune)
 
 # Dúvidas?
 
+## Desafio 02
+
+1. crie um objeto chamado "parcelas" de modo que ele seja: "parcela1, parcela2, parcela3, ....., parcela 1000". Use a função "paste0()"
+2. crie um objeto chamado "cont_trat"  sendo composto por 4000 "controle" e 4000 "tratamento". Use a função "rep()"
+3. crie um objeto chamado "presenca_ausencia" sendo composto por números aleatórios de 0 e 1,  com comprimento 8000 elementos. Use a função "sample()"
+4. crie um objeto chamado "abundacia"  sendo composto por números aleatórios entre 0 a 100,  com comprimento 8000 elementos. Use a função "sample()"
+
 # Valeu gente!
